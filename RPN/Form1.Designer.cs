@@ -94,7 +94,7 @@
             this.Controls.Add(this.Txt_Input);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Reverse Polish Notation Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 
