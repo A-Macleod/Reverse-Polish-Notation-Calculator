@@ -45,7 +45,7 @@ namespace RPN
                 throw new OverflowException("OverFlowException: The Array is Full");
             }
 
-            _array[++_top] = item; // Increment the top index, add item to that index
+            _array[++_top] = item; // Increment the top index, add item to that index, before insertion
                                    // -1 becomes 0, then the item is added to that index position
 
         }
@@ -58,10 +58,11 @@ namespace RPN
         /// <returns>The top index value from the array based stack, then decrements top by 1, removing the item</returns>
         public T Pop()
         {
-            if ( _top == -1)                 
-            {
-                throw new UnderflowException("UnderFlowException: The Array is Empty");
+            if ( _top == -1)
+            {   
                 // How to add UnderFlowException Class https://stackoverflow.com/questions/41849215/how-to-throw-an-underflow-exception
+                throw new UnderflowException("UnderFlowException: The Array is Empty");
+                
             }
 
             T value = _array[_top--]; // AFTER the array top index has been returned, decrement top
