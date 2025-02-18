@@ -18,11 +18,14 @@ namespace RPN
 
         private void Btn_Eval_Click(object sender, EventArgs e)
         {
-            // Read and Parse Expression here... 
+            
             string input = inputText.Text;
-            //input.Length
-            stack = new ArrayStack<double>(10); // create a new stack object the size of the input 
+
+            stack = new LinkedListStack<double>();
+            //stack = new ArrayStack<double>(input.Length); // create a new stack object the size of the input, the stack can never be full this way
             calculator = new PolishNotationCalculator(stack); // create a new PNC object, with the ArrayStack as the implementation
+
+            //ClearInputText();
 
             try
             {

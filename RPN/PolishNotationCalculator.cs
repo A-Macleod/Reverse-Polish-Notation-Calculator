@@ -15,17 +15,17 @@ namespace RPN
 
         public double Evaluate(string expression)
         {
-             /*
-             * 1. Split the expression into individual tokens using a space as the delimiter.
-             * 2. Iterate over each token:
-             *      - If the token is a number, push it onto the stack.
-             *      - If the token is an operator (+, -, *, /):
-             *          a. Pop two numbers from the stack (b first, then a).
-             *          b. Perform the operation (a + b, a - b, etc.).
-             *          c. Push the result back onto the stack.
-             * 3. After processing all tokens, the result of the calculation will be the single number remaining on the stack.
-             *    Pop and return it as the final result.
-             */
+            /*
+            * 1. Split the expression into individual tokens using a space as the delimiter.
+            * 2. Iterate over each token:
+            *      - If the token is a number, push it onto the stack.
+            *      - If the token is an operator (+, -, *, /):
+            *          a. Pop two numbers from the stack (b first, then a).
+            *          b. Perform the operation (a + b, a - b, etc.).
+            *          c. Push the result back onto the stack.
+            * 3. After processing all tokens, the result of the calculation will be the single number remaining on the stack.
+            *    Pop and return it as the final result.
+            */
 
             string[] tokens = expression.Trim().Split(' '); // trim the whitespace and seperate inputs with a space
 
