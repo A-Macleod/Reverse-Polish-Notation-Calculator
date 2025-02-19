@@ -15,11 +15,11 @@ namespace RPN
     class LinkedListStack<T> : IStack<T>
     {
         /// <summary>
-        /// Node class represents a node in the linked list
+        /// Node class, represents a node in the linked list
         /// </summary>
         private class Node
         {
-            public T Data;  
+            public T Data;    
             public Node Next;  
 
             /// <summary>

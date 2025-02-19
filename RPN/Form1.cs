@@ -43,7 +43,7 @@ namespace RPN
             }
             catch (Exception ex)
             {
-                string err = "Please make sure you type at least TWO numbers followed by the Operators";
+                string err = "Please make sure you type at least TWO numbers followed by Operators + - * / ";
                 outputText.Text = $"{err}" + Environment.NewLine + $"{ex.Message}";
                 ClearInputText();
 

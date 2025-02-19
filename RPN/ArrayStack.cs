@@ -58,7 +58,7 @@ namespace RPN
         /// <returns>The top index value from the array based stack, then decrements top by 1, removing the item</returns>
         public T Pop()
         {
-            if ( _top == -1)
+            if ( IsEmpty() ) // if true do this
             {   
                 // How to add UnderFlowException Class https://stackoverflow.com/questions/41849215/how-to-throw-an-underflow-exception
                 throw new UnderflowException("UnderFlowException: The Array is Empty");
@@ -67,6 +67,7 @@ namespace RPN
 
             T value = _array[_top--]; // AFTER the array top index has been returned, decrement top
                                       // The -- after the variable states to decrement after the variable value has been returned
+                                      // if it was before the variable, it would be to decrement then return the value
 
             return value;
 
@@ -80,7 +81,7 @@ namespace RPN
         /// <returns>The top index value from the array based stack</returns>
         public T Peek()
         {
-            if ( _top == -1 ) 
+            if ( IsEmpty() ) // if true do this
             {
                 throw new UnderflowException("UnderFlowException: The Array is Empty");
             }
@@ -97,7 +98,7 @@ namespace RPN
         public bool IsEmpty()
         {
 
-            if (_top == -1) 
+            if (_top == -1) // if the array is empty
             {
                 return true;
 
@@ -125,6 +126,7 @@ namespace RPN
                 return false;
             }
         }
+
 
     }
 }
