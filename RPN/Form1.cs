@@ -18,18 +18,26 @@ namespace RPN
 
         private void Btn_Eval_Click(object sender, EventArgs e)
         {
-            
+
             string input = inputText.Text;
+            ClearInputText();
 
-            stack = new LinkedListStack<double>();
-            //stack = new ArrayStack<double>(input.Length); // create a new stack object the size of the input, the stack can never be full this way
-            calculator = new PolishNotationCalculator(stack); // create a new PNC object, with the ArrayStack as the implementation
+            if (ArrayButton.Checked) // if ArrayButton is True (toggled)
+            {
+                stack = new ArrayStack<double>(input.Length); // create a new stack object the size of the input, the stack can never be full this way
+                calculator = new PolishNotationCalculator(stack); // create a new PNC object, with the ArrayStack as the implementation
 
-            //ClearInputText();
+            }else if (LinkedListButton.Checked) // if LinkedListButton is True (toggled)
+            {
+                stack = new LinkedListStack<double>();
+                calculator = new PolishNotationCalculator(stack); // create a new PNC object, with the ArrayStack as the implementation
+
+            }
+
 
             try
             {
-                outputText.Text = $"{calculator.Evaluate(input.ToString())}"; // call the PNC calculator Method with the input as the argument, inside the PNC class
+                outputText.Text = $"Answer = {calculator.Evaluate(input.ToString())}"; // call the PNC calculator Method with the input as the argument, inside the PNC class
                 ClearInputText();
 
             }
